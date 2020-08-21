@@ -19,18 +19,11 @@
 
 <Target Name="Build" DependsOnTargets="Clean;Compile;Test;Document;Merge;Publish" />
 
-<Target Name="GenerateBuildInfo" Condition="$(RunningOnBuildServer)">
-  <AssemblyInfo CodeLanguage="CS" OutputFile="src\docu.console\BuildInfo.cs"
-                AssemblyVersion="$(BuildVersion)"
-                AssemblyFileVersion="$(BuildVersion)" />
-                
-</Target>
-
 <Target Name="Clean">
   <RemoveDir Directories="artifacts" />
 </Target>
   
-<Target Name="Compile" DependsOnTargets="GenerateBuildInfo">
+<Target Name="Compile">
   <MSbuild Projects="src\Docu.sln" Properties="Configuration=$(Configuration)" />
 </Target>
 

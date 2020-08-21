@@ -216,8 +216,8 @@ h5 {
 	margin: 8px 0px;
 }
 
-dl dt {	width: 180px; float: left; }
-dl dd { margin-left: 180px;  }
+dl dt {	width: 180px; float: left; clear: left; padding-bottom: 6px; overflow-wrap: break-word; }
+dl dd { margin-left: 180px; clear: right; padding-bottom: 6px;  }
         
        	
 

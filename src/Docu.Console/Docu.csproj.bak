@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2FB9E7C3-B602-4343-B510-9C8DBFC7B8FD}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Docu</RootNamespace>
+    <AssemblyName>docu</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\docu.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\docu.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.SparkLanguagePackageLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\spark\Interop.SparkLanguagePackageLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Spark, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7f8549eed921a12c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\spark\Spark.dll</HintPath>
+    </Reference>
+    <Reference Include="SparkLanguage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\spark\SparkLanguage.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.5.3.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\structuremap\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuildInfo.cs" />
+    <Compile Include="Console\ISwitch.cs" />
+    <Compile Include="Console\ParameterSwitch.cs" />
+    <Compile Include="Console\Switch.cs" />
+    <Compile Include="Documentation\Comments\BaseComment.cs" />
+    <Compile Include="Documentation\Comments\InlineList.cs" />
+    <Compile Include="Documentation\Comments\MultilineCode.cs" />
+    <Compile Include="Documentation\Comments\ParameterReference.cs" />
+    <Compile Include="Documentation\Comments\Remarks.cs" />
+    <Compile Include="Documentation\Comments\Summary.cs" />
+    <Compile Include="Documentation\Comments\Value.cs" />
+    <Compile Include="Documentation\Generators\BaseGenerator.cs" />
+    <Compile Include="Documentation\Generators\EventGenerator.cs" />
+    <Compile Include="Documentation\Field.cs" />
+    <Compile Include="Documentation\Generators\FieldGenerator.cs" />
+    <Compile Include="Documentation\Generators\MethodGenerator.cs" />
+    <Compile Include="Documentation\Generators\NamespaceGenerator.cs" />
+    <Compile Include="Documentation\Generators\PropertyGenerator.cs" />
+    <Compile Include="Documentation\Generators\TypeGenerator.cs" />
+    <Compile Include="Events\BadFileEvent.cs" />
+    <Compile Include="Console\AssemblyNotFoundMessage.cs" />
+    <Compile Include="Console\ConsoleApplication.cs" />
+    <Compile Include="Console\ConsoleScreenWriter.cs" />
+    <Compile Include="Console\WarningMessage.cs" />
+    <Compile Include="Console\DoneMessage.cs" />
+    <Compile Include="Console\FileNotFoundMessage.cs" />
+    <Compile Include="Console\HelpMessage.cs" />
+    <Compile Include="Console\InvalidArgumentMessage.cs" />
+    <Compile Include="Console\IScreenMessage.cs" />
+    <Compile Include="Console\IScreenWriter.cs" />
+    <Compile Include="Console\Messages.cs" />
+    <Compile Include="Console\NoAssembliesFoundMessage.cs" />
+    <Compile Include="Console\NoXmlsFoundMessage.cs" />
+    <Compile Include="Console\ProcessingArgumentsMessage.cs" />
+    <Compile Include="Console\SplashMessage.cs" />
+    <Compile Include="Console\StartMessage.cs" />
+    <Compile Include="Events\WarningEvent.cs" />
+    <Compile Include="Console\XmlNotFoundMessage.cs" />
+    <Compile Include="ContainerBootstrapper.cs" />
+    <Compile Include="DefaultRegistry.cs" />
+    <Compile Include="Documentation\BaseDocumentationElement.cs" />
+    <Compile Include="Documentation\Event.cs" />
+    <Compile Include="Documentation\Generators\GenerationStep.cs" />
+    <Compile Include="Documentation\IDocumentationElement.cs" />
+    <Compile Include="Documentation\Generators\IGenerationStep.cs" />
+    <Compile Include="Documentation\PrettyNameExtensions.cs" />
+    <Compile Include="Events\DocuEvent.cs" />
+    <Compile Include="Events\EventAggregator.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Events\IEventAggregator.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="IDocumentationGenerator.cs" />
+    <Compile Include="IO\AssemblyLoader.cs" />
+    <Compile Include="DocumentationGenerator.cs" />
+    <Compile Include="Output\IBulkPageWriter.cs" />
+    <Compile Include="Output\IUntransformableResourceManager.cs" />
+    <Compile Include="IO\IAssemblyLoader.cs" />
+    <Compile Include="IO\IXmlLoader.cs" />
+    <Compile Include="Parsing\Comments\ICommentNodeParser.cs" />
+    <Compile Include="Parsing\Comments\InlineCodeCommentParser.cs" />
+    <Compile Include="Parsing\Comments\InlineListCommentParser.cs" />
+    <Compile Include="Parsing\Comments\InlineTextCommentParser.cs" />
+    <Compile Include="Parsing\Comments\MultilineCodeCommentParser.cs" />
+    <Compile Include="Parsing\Comments\ParagraphCommentParser.cs" />
+    <Compile Include="Parsing\Comments\ParameterReferenceParser.cs" />
+    <Compile Include="Parsing\Comments\ParseOptions.cs" />
+    <Compile Include="Parsing\Comments\SeeCodeCommentParser.cs" />
+    <Compile Include="Parsing\DocumentationXmlMatcher.cs" />
+    <Compile Include="Parsing\DocumentableMemberFinder.cs" />
+    <Compile Include="Parsing\IAssemblyXmlParser.cs" />
+    <Compile Include="Parsing\IDocumentationXmlMatcher.cs" />
+    <Compile Include="Parsing\Model\DocumentedEvent.cs" />
+    <Compile Include="Parsing\Model\DocumentedField.cs" />
+    <Compile Include="Parsing\Model\EventIdentifier.cs" />
+    <Compile Include="Parsing\Model\FieldIdentifier.cs" />
+    <Compile Include="Parsing\Model\IDocumentationMember.cs" />
+    <Compile Include="Parsing\Model\Identifier.cs" />
+    <Compile Include="Parsing\Model\DocumentedMethod.cs" />
+    <Compile Include="Parsing\Model\DocumentedProperty.cs" />
+    <Compile Include="Parsing\Model\DocumentedType.cs" />
+    <Compile Include="Parsing\Model\MethodIdentifier.cs" />
+    <Compile Include="Parsing\Model\NamespaceIdentifier.cs" />
+    <Compile Include="Parsing\Model\PropertyIdentifier.cs" />
+    <Compile Include="Parsing\Model\TypeIdentifier.cs" />
+    <Compile Include="Parsing\Model\UndocumentedEvent.cs" />
+    <Compile Include="Parsing\Model\UndocumentedField.cs" />
+    <Compile Include="Parsing\Model\UndocumentedMethod.cs" />
+    <Compile Include="Parsing\Model\UndocumentedProperty.cs" />
+    <Compile Include="Parsing\Model\UndocumentedType.cs" />
+    <Compile Include="Documentation\Comments\InlineCode.cs" />
+    <Compile Include="Documentation\Method.cs" />
+    <Compile Include="Documentation\Namespace.cs" />
+    <Compile Include="Documentation\Comments\Paragraph.cs" />
+    <Compile Include="Documentation\MethodParameter.cs" />
+    <Compile Include="Documentation\Property.cs" />
+    <Compile Include="Documentation\Comments\See.cs" />
+    <Compile Include="Documentation\Comments\InlineText.cs" />
+    <Compile Include="Documentation\DeclaredType.cs" />
+    <Compile Include="Output\BulkPageWriter.cs" />
+    <Compile Include="Output\HtmlGenerator.cs" />
+    <Compile Include="Parsing\UnsupportedDocumentationMemberException.cs" />
+    <Compile Include="Output\Rendering\HtmlOutputFormatter.cs" />
+    <Compile Include="Output\Rendering\IOutputFormatter.cs" />
+    <Compile Include="Output\IOutputGenerator.cs" />
+    <Compile Include="Output\IPatternTemplateResolver.cs" />
+    <Compile Include="Output\IPageWriter.cs" />
+    <Compile Include="Output\ViewData.cs" />
+    <Compile Include="Output\PatternTemplateResolver.cs" />
+    <Compile Include="Output\TemplateMatch.cs" />
+    <Compile Include="IO\FileSystemOutputWriter.cs" />
+    <Compile Include="IO\IOutputWriter.cs" />
+    <Compile Include="Output\Rendering\IOutputFormatterPart.cs" />
+    <Compile Include="Output\Rendering\OutputFormatterPart.cs" />
+    <Compile Include="Output\Rendering\SparkTemplateBase.cs" />
+    <Compile Include="Output\PageWriter.cs" />
+    <Compile Include="Documentation\IReferencable.cs" />
+    <Compile Include="Documentation\IReferrer.cs" />
+    <Compile Include="Parsing\Comments\CommentParser.cs" />
+    <Compile Include="Documentation\Comments\IComment.cs" />
+    <Compile Include="Documentation\IDocumentModel.cs" />
+    <Compile Include="Parsing\AssemblyXmlParser.cs" />
+    <Compile Include="Parsing\Comments\ICommentParser.cs" />
+    <Compile Include="Parsing\IDocumentableMemberFinder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Documentation\DocumentModel.cs" />
+    <Compile Include="IO\XmlLoader.cs" />
+    <Compile Include="Output\UntransformableResourceManager.cs" />
+    <Compile Include="Output\Rendering\TemplateHelperExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\index.htm.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\!namespace\index.htm.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\_namespaces.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\!namespace\!type.htm.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\main.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\_types.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\!namespace\_types.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\!namespace\_namespaces.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\!namespace\_methods.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\!namespace\_properties.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\js\jquery-1.3.2.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\js\jquery.scrollTo-min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\js\navigation.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\!namespace\_events.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\!namespace\_fields.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\!namespace\_remarks.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\!namespace\_comment.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\!namespace\_value.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\!namespace\_example.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\js\example.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="templates\_common_footer.spark">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
