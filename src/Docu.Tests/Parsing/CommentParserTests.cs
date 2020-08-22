@@ -12,7 +12,7 @@ namespace Docu.Tests.Parsing
         private CommentParser parser;
         private IContainer container;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void SetupContainer()
         {
             container = ContainerBootstrapper.BootstrapStructureMap();

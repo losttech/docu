@@ -1,172 +1,36 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{76E3611F-A908-4A1B-8673-A221DD8C5301}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Docu.Tests</RootNamespace>
-    <AssemblyName>Docu.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
-    <TargetFrameworkProfile />
+    <TargetFramework>net461</TargetFramework>
+
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Machine.Specifications, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\mspec\Machine.Specifications.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.5.0.8332, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\nunit\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\rhino\Rhino.Mocks.dll</HintPath>
-    </Reference>
-    <Reference Include="Spark, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7f8549eed921a12c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\spark\Spark.dll</HintPath>
-    </Reference>
-    <Reference Include="StructureMap, Version=2.5.3.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\structuremap\StructureMap.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="Machine.Specifications" Version="0.3.0" />
+    <PackageReference Include="nunit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+    <PackageReference Include="RhinoMocks" Version="3.6.1" />
+    <PackageReference Include="Spark" Version="1.8.1" />
+    <PackageReference Include="structuremap" Version="2.6.4.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Console\ConsoleApplicationTests\Arguments.cs" />
-    <Compile Include="Console\ConsoleApplicationTests\BadXml.cs" />
-    <Compile Include="Console\ConsoleApplicationTests\Switches.cs" />
-    <Compile Include="Console\ConsoleApplicationTests\ValidArguments.cs" />
-    <Compile Include="DocumentationGeneratorTests\BaseDocumentationGeneratorFixture.cs" />
-    <Compile Include="DocumentationGeneratorTests\Generate.cs" />
-    <Compile Include="DocumentationGeneratorTests\SetOutputPath.cs" />
-    <Compile Include="DocumentationGeneratorTests\SetTemplatePath.cs" />
-    <Compile Include="DocumentationGeneratorTests\SetXml.cs" />
-    <Compile Include="DocumentationGeneratorTests\SetAssembly.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\CommentAssertionExtensions.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\Examples.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\Returns.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\Fields.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\Remarks.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\UnrecognisedDocumentationTypes.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\BaseDocumentModelGeneratorFixture.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\Events.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\Namespaces.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\Summaries.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\Values.cs" />
-    <Compile Include="Events\EventAggregatorTests.cs" />
-    <Compile Include="Output\PatternTemplateResolverTests\BasePatternResolve_ViewData_Fixture.cs" />
-    <Compile Include="Output\PatternTemplateResolverTests\type_template_in_directory.cs" />
-    <Compile Include="Output\PatternTemplateResolverTests\single_template_in_directory.cs" />
-    <Compile Include="Output\PatternTemplateResolverTests\single_template_in_namespace.cs" />
-    <Compile Include="Output\PatternTemplateResolverTests\namespace_template.cs" />
-    <Compile Include="Output\PatternTemplateResolverTests\single_template.cs" />
-    <Compile Include="Output\PatternTemplateResolverTests\type_template_in_namespace.cs" />
-    <Compile Include="Output\PatternTemplateResolverTests\type_template.cs" />
-    <Compile Include="Output\Rendering\HtmlOutputFormatter_Referencable_Specs.cs" />
-    <Compile Include="Output\SparkTemplateBaseSpecs.cs" />
-    <Compile Include="Output\TemplateTransformerTests.cs" />
-    <Compile Include="TestExtensions.cs" />
-    <Compile Include="Parsing\IdentifierTests.cs" />
-    <Compile Include="ReflectionHelper.cs" />
-    <Compile Include="Output\Rendering\HtmlOutputFormatterSpecs.cs" />
-    <Compile Include="Utils\Mock.cs" />
-    <Compile Include="Utils\Stub.cs" />
-    <Compile Include="Utils\TestTemplateAttribute.cs" />
-    <Compile Include="Output\UntransformableResourceManagerTests.cs" />
-    <Compile Include="Output\UntransformableResourceManagerTestsBase.cs" />
-    <Compile Include="IO\AssemblyLoaderTests.cs" />
-    <Compile Include="IO\XmlLoaderTests.cs" />
-    <Compile Include="Parsing\DocumentationXmlMatcherTests.cs" />
-    <Compile Include="Parsing\DocumentationXmlMatcherPrePopulationTests.cs" />
-    <Compile Include="BaseFixture.cs" />
-    <Compile Include="Output\BulkTransformer_Directory_Tests.cs" />
-    <Compile Include="Parsing\CommentParserTests.cs" />
-    <Compile Include="Extensions.cs" />
-    <Compile Include="Fixtures\First.cs" />
-    <Compile Include="Fixtures\Second.cs" />
-    <Compile Include="Fixtures\Third.cs" />
-    <Compile Include="Output\HtmlGenerationTests.cs" />
-    <Compile Include="Parsing\AssemblyXmlParserTests.cs" />
-    <Compile Include="Output\PatternTemplateResolverTests\paths.cs" />
-    <Compile Include="ExtensionTests.cs" />
-    <Compile Include="Output\Rendering\PrettyNameTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Documentation\DocumentModelGeneratorTests\General.cs" />
-    <Compile Include="Output\TemplateTransformer_OutputDir_Tests.cs" />
+    <ProjectReference Include="..\Docu.Console\Docu.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Docu.Console\Docu.csproj">
-      <Project>{2FB9E7C3-B602-4343-B510-9C8DBFC7B8FD}</Project>
-      <Name>Docu</Name>
-    </ProjectReference>
-  </ItemGroup>
+
   <ItemGroup>
     <Content Include="DummyDocs.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Fixtures\FakeAssembly3.xml">
+    <Content Include="Fixtures\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Fixtures\FakeAssembly2.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fixtures\FakeAssembly1.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fixtures\FakeAssembly2.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fixtures\FakeAssembly3.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fixtures\FakeAssembly1.dll">
+    <Content Include="Fixtures\*.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>

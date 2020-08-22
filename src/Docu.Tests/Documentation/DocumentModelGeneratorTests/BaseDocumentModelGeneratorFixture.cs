@@ -18,7 +18,7 @@ namespace Docu.Tests.Documentation.DocumentModelGeneratorTests
         public IEventAggregator StubEventAggregator;
         private IContainer container;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             container = ContainerBootstrapper.BootstrapStructureMap();
