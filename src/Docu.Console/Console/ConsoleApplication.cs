@@ -54,12 +54,12 @@ namespace Docu.Console
             }));
         }
 
-        void Warning(string message)
+        private void Warning(string message)
         {
             ShowMessage(new WarningMessage(message));
         }
 
-        void BadFile(string path)
+        private void BadFile(string path)
         {
             ShowMessage(new BadFileMessage(path));
         }
@@ -85,8 +85,8 @@ namespace Docu.Console
 
             ShowMessage(Messages.Splash);
 
-            string[] assemblies = GetAssembliesFromArgs(arguments);
-            string[] xmls = GetXmlsFromArgs(arguments, assemblies);
+            var assemblies = GetAssembliesFromArgs(arguments);
+            var xmls = GetXmlsFromArgs(arguments, assemblies);
 
             if (VerifyArguments(assemblies, xmls))
             {
@@ -124,7 +124,7 @@ namespace Docu.Console
         {
             foreach (var argument in arguments)
             {
-                if (isAssemblyArgument(argument) || Path.GetExtension(argument).Equals(".xml", StringComparison.OrdinalIgnoreCase)) continue;
+                if (IsAssemblyArgument(argument) || Path.GetExtension(argument).Equals(".xml", StringComparison.OrdinalIgnoreCase)) continue;
 
                 ShowMessage(new InvalidArgumentMessage(argument));
                 return false;
@@ -144,7 +144,7 @@ namespace Docu.Console
                 return false;
             }
 
-            foreach (string assembly in assemblies)
+            foreach (var assembly in assemblies)
             {
                 if (!File.Exists(assembly))
                 {
@@ -164,7 +164,7 @@ namespace Docu.Console
                 return false;
             }
 
-            foreach (string xml in xmls)
+            foreach (var xml in xmls)
             {
                 if (!File.Exists(xml))
                 {
@@ -194,9 +194,9 @@ namespace Docu.Console
             if (xmls.Count == 0)
             {
                 // none specified, try to find some
-                foreach (string assembly in assemblies)
+                foreach (var assembly in assemblies)
                 {
-                    var name = getExpectedXmlFileForAssembly(assembly);
+                    var name = GetExpectedXmlFileForAssembly(assembly);
 
                     foreach (var file in GetFiles(name))
                     {
@@ -209,7 +209,7 @@ namespace Docu.Console
             return xmls.ToArray();
         }
 
-        private static string getExpectedXmlFileForAssembly(string assembly)
+        private static string GetExpectedXmlFileForAssembly(string assembly)
         {
             var extension = Path.GetExtension(assembly);
             return assembly.Substring(0, assembly.Length - extension.Length) + ".xml";
@@ -222,7 +222,7 @@ namespace Docu.Console
             foreach (var arg in args)
             {
                 
-                if (isAssemblyArgument(arg))
+                if (IsAssemblyArgument(arg))
                 {
                     assemblies.AddRange(GetFiles(arg));
                 }
@@ -231,7 +231,7 @@ namespace Docu.Console
             return assemblies.ToArray();
         }
 
-        private static bool isAssemblyArgument(string argument)
+        private static bool IsAssemblyArgument(string argument)
         {
             var fileExtension = Path.GetExtension(argument);
             return fileExtension.Equals(".dll", StringComparison.InvariantCultureIgnoreCase) || fileExtension.Equals(".exe", StringComparison.InvariantCultureIgnoreCase);

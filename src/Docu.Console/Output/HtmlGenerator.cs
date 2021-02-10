@@ -41,12 +41,12 @@ namespace Docu.Output
 
         public string Convert(string templateName, ViewData data, string relativeOutputPath)
         {
-            string template = templateName;
+            var template = templateName;
 
             if (template.StartsWith(templatePath))
                 template = template.Substring(templatePath.Length + 1);
 
-            SparkViewDescriptor descriptor = new SparkViewDescriptor()
+            var descriptor = new SparkViewDescriptor()
                 .AddTemplate(template);
             var view = (SparkTemplateBase)engine.CreateInstance(descriptor);
 
