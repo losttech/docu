@@ -1,8 +1,6 @@
-﻿<nav id="namespaces">
-	<h2 class="fixed">Namespaces</h2>
-	<div class="scroll">
-		<ul>
-			<li each="var ns in Namespaces">${Format(ns)}</li>
-		</ul>
-	</div>
-</nav>
+﻿<h2 class="fixed">Namespaces</h2>
+<div class="scroll">
+	<ul>
+		<li each="var ns in Namespaces">${Format(ns)}</li>
+	</ul>
+</div>

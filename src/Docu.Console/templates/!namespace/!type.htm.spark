@@ -16,7 +16,9 @@
   	<header><h1>${WriteProductName(Assemblies[0])} : API Documentation</h1>
 	</header>
 
-    <namespaces />
+    <nav id="namespaces">
+      <iframe src="../namespaces.htm" />
+    </nav>
     <types />
 	<article>
     <header>

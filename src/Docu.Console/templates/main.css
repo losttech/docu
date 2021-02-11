@@ -127,6 +127,10 @@ nav#namespaces {
 	width: 384px;
 	overflow: hidden;
 }
+nav#namespaces > iframe {
+    width: 100%;
+    height: 100%;
+}
 
 nav#types {
 	position: absolute;

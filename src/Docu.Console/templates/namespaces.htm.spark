@@ -4,22 +4,14 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-		<title>${WriteProductName(Assemblies[0])} API Documentation</title>
+		<title>${WriteProductName(Assemblies[0])} namespaces</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<link type="text/css" rel="stylesheet" href="main.css" />
+        <base target="_parent"/>
 	</head>
 	<body>
-	<header><h1>${WriteProductName(Assemblies[0])} : API Documentation</h1>
-	</header>
-	<nav id="namespaces">
+    <nav id="namespace-list">
       <namespaces />
 	</nav>
-    <types />
-	<article>
-    <header>
-		<p class="class">${WriteProductName(Assemblies[0])} Documentation</p>
-	</header>
-	</article>
-    <use file="_common_footer" />
   </body>
 </html>
